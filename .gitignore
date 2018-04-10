@@ -1,0 +1,11 @@
+node_modules
+jspm_packages
+
+# Yarn
+yarn-error.log
+
+# Serverless directories
+.serverless
+
+# NuxtJS Directory
+.nuxt

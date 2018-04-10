@@ -1,0 +1,21 @@
+service: nuxt-serverless # NOTE: update this with your service name
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+
+functions:
+  nuxt:
+    handler: handler.nuxt
+    events:
+      - http: ANY {proxy+}
+
+plugins:
+  - serverless-apigw-binary
+ 
+custom:
+  apigwBinary:
+    types:
+      - '*/*'
